@@ -111,4 +111,11 @@ public class AiChatConversationController {
         return success(true);
     }
 
+    // chat2SQL
+    @GetMapping("/get-my-sql")
+    @Operation(summary = "获得我的对话SQL")
+    public CommonResult<String> getMyChatConversationSql() {
+        return success(chatConversationService.getMyChatConversationSql(getLoginUserId()));
+    }
+
 }
